@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const AlertSchema = new mongoose.Schema(
     {
-        coin_id: {
+        coinId: {
             type: String,
             trim: true,
             required: true,
         },
 
-        currency_id: {
+        currencyId: {
             type: String,
             trim: true,
             required: true,
@@ -17,6 +17,12 @@ const AlertSchema = new mongoose.Schema(
         value: {
             type: Number,
             trim: true,
+            required: true,
+        },
+
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
             required: true,
         },
     },
