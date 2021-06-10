@@ -6,9 +6,11 @@ const app = express();
 
 app.use(express.json());
 
-// const { Alert } = require('./models/Alert');
-// const { Notification } = require('./models/Notification');
-// const { User } = require('./models/User');
+const { Alert } = require('./models/Alert');
+const { Notification } = require('./models/Notification');
+const { User } = require('./models/User');
+
+require('./seed/seeder')();
 
 (async () => {
     try {
