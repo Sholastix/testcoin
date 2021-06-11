@@ -28,7 +28,8 @@ module.exports = async () => {
 
         let saved = [];
         for (let i = 0; i < users.length; i++) {
-            saved.push(users[i].save());
+            users[i].save();
+            saved.push(users[i]);
         };
 
         let alerts = [];
@@ -38,7 +39,7 @@ module.exports = async () => {
                     coinId: 'bitcoin',
                     currencyId: 'eth',
                     value: Math.random() * (16 - 14) + 14,
-                    owner: saved[i].id,
+                    owner: users[i]._id,
                 });
 
                 alerts.push(alert.save());

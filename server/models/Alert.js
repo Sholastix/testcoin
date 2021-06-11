@@ -19,6 +19,15 @@ const AlertSchema = new mongoose.Schema(
             trim: true,
             required: true,
         },
+
+        owner: {
+            type: String,
+        },
+
+        // owner: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'User',
+        // },
     },
 
     {
