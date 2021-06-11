@@ -28,21 +28,23 @@ module.exports = async () => {
 
         let saved = [];
         for (let i = 0; i < users.length; i++) {
-            users[i].save();
+            await users[i].save();
             saved.push(users[i]);
         };
 
         let alerts = [];
         for (let i = 0; i < saved.length; i++) {
             for (let j = 0; j < 3; j++) {
-                let alert = new Alert({
+                let alert = await new Alert({
+                    owner: users[i]._id,
                     coinId: 'bitcoin',
                     currencyId: 'eth',
                     value: Math.random() * (16 - 14) + 14,
-                    owner: users[i]._id,
                 });
 
-                alerts.push(alert.save());
+                // alerts.push(await alert.save());
+                let saveAlert = await alert.save();
+                alerts.push(saveAlert);
             };
         };
 

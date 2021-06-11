@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 
 const AlertSchema = new mongoose.Schema(
     {
+        owner: {
+            type: String,
+            required: true,
+        },
+
         coinId: {
             type: String,
             trim: true,
@@ -19,15 +24,6 @@ const AlertSchema = new mongoose.Schema(
             trim: true,
             required: true,
         },
-
-        owner: {
-            type: String,
-        },
-
-        // owner: {
-        //     type: mongoose.Schema.Types.ObjectId,
-        //     ref: 'User',
-        // },
     },
 
     {
