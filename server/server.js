@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cron = require('node-cron');
 const express = require('express');
 const mongoose = require('mongoose');
 const request = require('request');
@@ -36,7 +37,10 @@ const data = async () => {
     });
 };
 
-data();
+cron.schedule('*/1 * * * *', () => {
+    data();
+    console.log('MESSAGE: Fetching and comparing data every 1 minute.');
+});
 
 (async () => {
     try {

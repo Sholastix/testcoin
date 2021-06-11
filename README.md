@@ -15,4 +15,5 @@ __________________________________________________________________
         3.1. npm install - needed modules installation;
         3.2. npm start - code start.
 
-ATTENTION!!! After first start of the server you need to commit string 14 in 'seeder.js' file and save the changes. Then comparison begins.
+ATTENTION!!! After server's start you'll need to wait 1 minute. Then fetching and comparison begins (and repeats every 1 minute) 
+and you'll see result in console output.
